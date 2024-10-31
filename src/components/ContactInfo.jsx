@@ -6,9 +6,9 @@ import { motion } from "framer-motion";
  * Displays the user's contact details.
  *
  * @component
- * @param {string} name - The name of the user.
- * @param {string} email - The email address of the user.
- * @param {string} location - The location of the user.
+ * @param {BelenBareiro} name - The name of the user.
+ * @param {mbareiromereles@gmail.com} email - The email address of the user.
+ * @param {Encarnacio-Paraguay} location - The location of the user.
  */
 
 const ContactInfo = ({ name, email, location }) => {

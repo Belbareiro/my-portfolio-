@@ -26,7 +26,6 @@ const Header = () => {
             whileTap={{ scale: 0.9 }}
             className="logo"
             src={logo}
-            alt="Michael Yeates' Logo"
           />
         </motion.div>
       </NavLink>

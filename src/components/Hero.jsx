@@ -7,7 +7,7 @@ import SocialIcons from "./SocialIcons";
  * Represents the hero section of the page.
  *
  * @component
- * @param {string} name - The name to be displayed in the hero section.
+ * @param {BelenBareiro} name - The name to be displayed in the hero section.
  */
 
 const Hero = ({ name }) => {
@@ -65,7 +65,7 @@ const Hero = ({ name }) => {
               cursor: "",
             }}
             onInit={(typewriter) => {
-              typewriter.changeDelay(50).typeString("Software Engineer").start();
+              typewriter.changeDelay(50).typeString("Full Stack Developer").start();
             }}
           />
         </motion.div>
@@ -79,7 +79,7 @@ const Hero = ({ name }) => {
           transition={{ delay: 1, duration: 1.5, ease: "easeInOut" }}
           style={styles.landingImage}
           src={landingImage}
-          alt="Michael Yeates"
+
         />
       </div>
       {/* Displaying social icons */}
