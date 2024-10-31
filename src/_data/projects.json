@@ -5,7 +5,7 @@
     "image": "/projectImages/bike.png",
     "image2": "/projectImages/cyclingfamily.jpeg",
     "image3": "/projectImages/routes3.png",
-    "body": "ated project acies, I took charge of the entire route management aspect.\nThe purpose of this initiative was to enhance the safety of young cyclists. Leveraged Leaflet.js and TomTom's Routing/Reverse Geolocation APIs.\nIn practical terms, this translates to the creation of a interactive map. Users can intricately plan their routes, considering factors such as real-time traffic updates, designated bike lanes, and terrain gradients. The result is a visually appealing mapping experience. An adventure plotted with utmost consideration for safety and enjoyment.",
+    "body": "a",
     "technologies": [
       "Leaflet",
       "jQuery",
@@ -13,8 +13,6 @@
       "HTML",
       "CSS"
     ],
-    "github": "https://github.com/mdyeates/bike-buddy",
-    "deployed": "https://norrinradd8.github.io/bike_buddy/",
     "bgcolor": "var(--hl2-color)",
     "id": "1"
   },
@@ -30,9 +28,7 @@
       "HTML",
       "CSS"
     ],
-    "body": "This mobile web application leverages the OpenWeatherMap API to deliver real-time weather data for any location. Users can view current conditions including temperature, humidity, and wind speed, as well as a 5-day forecast.\nThe interface automatically adapts between light and dark modes based on the time of day at the given location. Recent searches are stored to enable quick access to frequently checked cities. Geolocation functionality determines the user's position for quick access to local weather.\nBy combining a modern, responsive design with robust weather data pulled from OpenWeatherMap's API, this application aims to provide an intuitive experience for staying up-to-date on the latest weather conditions. The project demonstrates proficiency in integrating third-party APIs, building adaptive interfaces, and crafting performant mobile web applications.",
-    "github": "https://github.com/mdyeates/weather-app",
-    "deployed": "https://mdyeates.github.io/weather-app/",
+    "body": "This ",
     "bgcolor": "var(--hl-color)",
     "id": "2"
   }
