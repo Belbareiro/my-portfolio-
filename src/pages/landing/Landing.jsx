@@ -6,7 +6,7 @@ import Draw from "../../components/Draw";
  * Displays the main landing page content including Hero, Drawing, and About sections.
  *
  * @component
- * @param {string} name - The name of the user displayed in the Hero section.
+ * @param {BelenBareiro} name - The name of the user displayed in the Hero section.
  */
 
 const Landing = ({ name }) => {

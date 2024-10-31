@@ -1,25 +1,39 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 
 /**
  * Represents a drawing canvas that creates trails as the user moves the mouse.
  *
  * @component
  */
-
 const Draw = () => {
   // Create a reference to the canvas element
   const canvasRef = useRef(null);
   // Store the last position of the mouse
   const lastPositionRef = useRef(null);
+  // State to track if the mouse is pressed
+  const [isDrawing, setIsDrawing] = useState(false);
 
   useEffect(() => {
     // Get the canvas and its context
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
 
-    // Add a mousemove event listener to the canvas
-    canvas.addEventListener("mousemove", (e) => {
-      // Set the drawing settings
+    // Mouse down event to start drawing
+    const startDrawing = (e) => {
+      setIsDrawing(true);
+      lastPositionRef.current = { x: e.pageX - canvas.offsetLeft, y: e.pageY - canvas.offsetTop };
+    };
+
+    // Mouse up event to stop drawing
+    const stopDrawing = () => {
+      setIsDrawing(false);
+      ctx.beginPath(); // Reset the path for new drawing
+    };
+
+    // Mouse move event to draw on the canvas
+    const draw = (e) => {
+      if (!isDrawing) return; // Only draw if isDrawing is true
+
       ctx.lineWidth = 0.2;
       ctx.lineCap = "round";
       ctx.strokeStyle = "#fff";
@@ -29,16 +43,27 @@ const Draw = () => {
 
       if (lastPositionRef.current) {
         const { x, y } = lastPositionRef.current;
-        // Move the pen to the last position and draw a line to the current position
-        ctx.moveTo(x - canvas.offsetLeft, y - canvas.offsetTop);
+        ctx.moveTo(x, y);
         ctx.lineTo(pageX - canvas.offsetLeft, pageY - canvas.offsetTop);
         ctx.stroke();
       }
 
       // Update the last position
-      lastPositionRef.current = { x: pageX, y: pageY };
-    });
-  }, []); // Empty dependency array ensures this effect runs only once
+      lastPositionRef.current = { x: pageX - canvas.offsetLeft, y: pageY - canvas.offsetTop };
+    };
+
+    // Add event listeners for mouse events
+    canvas.addEventListener("mousedown", startDrawing);
+    canvas.addEventListener("mouseup", stopDrawing);
+    canvas.addEventListener("mousemove", draw);
+
+    // Cleanup function to remove event listeners
+    return () => {
+      canvas.removeEventListener("mousedown", startDrawing);
+      canvas.removeEventListener("mouseup", stopDrawing);
+      canvas.removeEventListener("mousemove", draw);
+    };
+  }, [isDrawing]); // Adding isDrawing as a dependency
 
   return (
     <canvas
