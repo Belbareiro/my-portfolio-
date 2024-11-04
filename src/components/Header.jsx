@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
-import logo from "../images/logo.svg";
 import NavLinks from "./NavLinks";
 
 /**
@@ -12,9 +11,9 @@ import NavLinks from "./NavLinks";
 const Header = () => {
   return (
     <header className="header">
-      {/* Link to the home page */}
+
       <NavLink to="/">
-        {/* Animated logo */}
+
         <motion.div
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
@@ -24,8 +23,7 @@ const Header = () => {
           <motion.img
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.9 }}
-            className="logo"
-            src={logo}
+
           />
         </motion.div>
       </NavLink>

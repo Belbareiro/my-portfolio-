@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Routes, Route, useLocation, Navigate } from "react-router-dom";
+import PDFViewer from './components/PDFViewer';
 
 // Components
 import Loader from "./pages/loader/loader";
@@ -76,6 +77,15 @@ function App() {
     return () => window.removeEventListener("visibilitychange", handleTabChange);
   }, [location, originalTitle]);
 
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    // Simulando la carga de projects.json
+    fetch('./data/projects.json')
+      .then(response => response.json())
+      .then(data => setProjects(data));
+  }, []);
+
   return (
     <>
       {showLoader ? (
@@ -106,6 +116,15 @@ function App() {
             {/* Fallback route for unknown paths */}
             <Route path="*" element={<Navigate to="/page-not-found" />} />
           </Routes>
+
+          {projects.map(project => (
+            <div key={project.id}>
+              <h1>{project.title}</h1>
+              <p>{project.description}</p>
+              {/* Aquí se incluye el visor de PDF */}
+              <PDFViewer pdfLink={project.pdfLink} />
+            </div>
+          ))}
         </>
       )}
     </>

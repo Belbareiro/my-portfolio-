@@ -1,35 +1,20 @@
 [
   {
-    "title": "Routes",
-    "description": "Plan Safe Routes",
+    "title": "Curriculum-Vitae",
+    "description": "Curriculum Vitae",
     "image": "/projectImages/bike.png",
     "image2": "/projectImages/cyclingfamily.jpeg",
     "image3": "/projectImages/routes3.png",
-    "body": "a",
+    "body": "Belen",
     "technologies": [
-      "Leaflet",
-      "jQuery",
-      "Bootstrap",
+      "Nodejs",
+      "MongoDB",
+      "React",
       "HTML",
       "CSS"
     ],
-    "bgcolor": "var(--hl2-color)",
-    "id": "1"
-  },
-  {
-    "title": "Weather",
-    "description": "Weather Forecast",
-    "image": "/projectImages/weather.png",
-    "image2": "/projectImages/storm.jpeg",
-    "image3": "/projectImages/weather3.png",
-    "technologies": [
-      "JavaScript",
-      "jQuery",
-      "HTML",
-      "CSS"
-    ],
-    "body": "This ",
     "bgcolor": "var(--hl-color)",
-    "id": "2"
+    "id": "1",
+    "pdfLink": "/curriculum.pdf"
   }
 ]
