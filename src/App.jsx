@@ -121,6 +121,9 @@ function App() {
             <div key={project.id}>
               <h1>{project.title}</h1>
               <p>{project.description}</p>
+
+
+
               {/* Aquí se incluye el visor de PDF */}
               <PDFViewer pdfLink={project.pdfLink} />
             </div>
